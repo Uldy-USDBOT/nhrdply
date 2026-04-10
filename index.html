@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHRDP - خدمة توصيل</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37; /* لون ذهبي ملكي */
+            --dark-gold: #B8860B;
+            --white: #FFFFFF;
+            --bg-light: #FAFAFA;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-light);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: var(--white);
+            border-bottom: 2px solid var(--gold);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        .hero {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .car-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin-bottom: 30px;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.1));
+            border-radius: 15px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .features {
+            font-size: 1.2rem;
+            color: var(--dark-gold);
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .payment-info {
+            background: #fff;
+            padding: 15px 30px;
+            border: 1px solid var(--gold);
+            border-radius: 50px;
+            margin-bottom: 40px;
+            font-size: 1rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+            background-color: #f1f1f1;
+        }
+
+        /* تنسيق خاص بالهواتف */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.5rem; }
+            .whatsapp-btn { width: 80%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">NHRDP.LY</div>
+    </header>
+
+    <main class="hero">
+        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1000&auto=format&fit=crop" alt="خدمة توصيل طرابلس" class="car-image">
+        
+        <h1>خدمة توصيل طلبيات داخل وخارج طرابلس</h1>
+        
+        <p class="features">سرعة . أمان . احترافية</p>
+
+        <div class="payment-info">
+            💰 نقبل الدفع **كاش** أو عبر **البطاقة المصرفية**
+        </div>
+
+        <a href="https://wa.me/218917021437" class="whatsapp-btn">
+            تواصل معنا عبر واتساب 💬
+        </a>
+    </main>
+
+    <footer>
+        &copy; 2026 nhrdp.ly - جميع الحقوق محفوظة
+    </footer>
+
+</body>
+</html>
