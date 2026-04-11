@@ -3,56 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NHRDP | أسرع خدمة توصيل في طرابلس</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;800&display=swap" rel="stylesheet">
+    <title>NHRDP | التوصيل الفاخر في ليبيا</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root { --gold: #D4AF37; --white: #FFFFFF; }
-        body { font-family: 'Tajawal', sans-serif; margin: 0; background: #fff; text-align: center; color: #333; }
-        header { padding: 20px; border-bottom: 4px solid var(--gold); background: #fff; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .logo-text { color: var(--gold); font-size: 2.5rem; font-weight: 800; margin: 0; }
-        .hero { padding: 30px 15px; }
-        /* الربط بصورتك المرفوعة nhrdp1.jpg */
-        .main-img { width: 100%; max-width: 500px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); margin-bottom: 20px; border: 3px solid var(--gold); }
-        .highlight-box { background: #fdf9ec; border: 1px solid var(--gold); padding: 15px; border-radius: 15px; margin: 20px auto; max-width: 400px; }
-        .features { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; padding: 20px; }
-        .card { background: #fff; padding: 15px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); width: 140px; border-top: 3px solid var(--gold); }
-        .card h4 { margin: 5px 0; color: var(--gold); }
-        .cta-btn { background: #25D366; color: #fff; padding: 18px; border-radius: 50px; display: flex; align-items: center; justify-content: center; gap: 10px; text-decoration: none; font-size: 1.3rem; font-weight: bold; position: fixed; bottom: 20px; left: 5%; right: 5%; max-width: 400px; margin: auto; box-shadow: 0 8px 20px rgba(37,211,102,0.4); z-index: 1000; transition: 0.3s; }
-        .cta-btn:hover { transform: scale(1.02); }
+        :root { 
+            --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F1D592 50%, #B8860B 100%);
+            --dark-royal: #1A1A1A;
+            --soft-white: #FAFAFA;
+        }
+        body { font-family: 'Tajawal', sans-serif; margin: 0; background: var(--soft-white); color: var(--dark-royal); line-height: 1.6; }
+        
+        /* هيدر بتصميم زجاجي */
+        header { 
+            padding: 15px; 
+            background: rgba(255, 255, 255, 0.9); 
+            backdrop-filter: blur(10px);
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 2px solid #D4AF37;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .logo-text { 
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.8rem; 
+            font-weight: 900; 
+            margin: 0;
+            letter-spacing: -1px;
+        }
+
+        .hero { padding: 40px 20px; text-align: center; }
+        .main-img { 
+            width: 100%; 
+            max-width: 450px; 
+            border-radius: 30px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+            margin-bottom: 30px; 
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: transform 0.5s ease;
+        }
+        .main-img:hover { transform: translateY(-10px); }
+
+        /* صندوق الدفع الإلكتروني المتميز */
+        .pos-badge {
+            background: var(--dark-royal);
+            color: #D4AF37;
+            padding: 20px;
+            border-radius: 20px;
+            margin: 20px auto;
+            max-width: 450px;
+            border-right: 5px solid #D4AF37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            font-weight: bold;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .service-card {
+            background: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
+        .service-card:hover { border-color: #D4AF37; }
+        .service-card h4 { color: #D4AF37; margin: 10px 0 5px; font-size: 1.2rem; }
+
+        /* زر الطلب العائم */
+        .order-bar {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 400px;
+            z-index: 2000;
+        }
+        .cta-btn { 
+            background: linear-gradient(90deg, #25D366 0%, #128C7E 100%);
+            color: #fff; 
+            padding: 20px; 
+            border-radius: 100px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 15px; 
+            text-decoration: none; 
+            font-size: 1.4rem; 
+            font-weight: bold; 
+            box-shadow: 0 15px 30px rgba(37,211,102,0.3);
+        }
+
+        /* تحريك بسيط عند الظهور */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        main { animation: fadeInUp 0.8s ease-out; }
     </style>
 </head>
 <body>
+
     <header>
         <h1 class="logo-text">NHRDP</h1>
-        <div style="font-size: 0.8rem; color: #666;">Next-Hour Rapid Delivery & Parcels</div>
+        <div style="font-size: 0.9rem; color: #888; font-weight: bold;">التميز في النقل والخدمات اللوجستية</div>
     </header>
 
     <main class="hero">
-        <img src="nhrdp1.jpg" alt="تاكسي توصيل NHRDP" class="main-img">
+        <img src="nhrdp1.jpg" alt="NHRDP Luxury Delivery" class="main-img">
         
-        <h2 style="font-size: 1.8rem; margin-bottom: 10px;">مشاويرك وطلبياتك.. <br><span style="color:var(--gold)">توصل في وقتها!</span></h2>
+        <h2 style="font-size: 2.2rem; margin-bottom: 10px; font-weight: 900;">سرعة البرق..<br><span style="color:#B8860B">بمعايير عالمية</span></h2>
         
-        <div class="highlight-box">
-            <strong>💳 ميزة حصرية:</strong> متوفر لدينا جهاز دفع إلكتروني P.O.S (سداد، تداول، بطاقة مصرفية) عند الاستلام.
+        <div class="pos-badge">
+            <span style="font-size: 2rem;">💳</span>
+            <div>
+                نقبل الدفع بجميع البطاقات المصرفية
+                <div style="font-size: 0.8rem; opacity: 0.8;">سداد | تداول | بطاقة مصرفية</div>
+            </div>
         </div>
 
-        <section class="features">
-            <div class="card"><h4>🚀 ساعة</h4><p style="font-size:0.8rem;">أقصى وقت للتوصيل داخل طرابلس.</p></div>
-            <div class="card"><h4>🛡️ أمان</h4><p style="font-size:0.8rem;">تتبع مباشر وضمان لسلامة أغراضك.</p></div>
-            <div class="card"><h4>🌍 ليبيا</h4><p style="font-size:0.8rem;">نربط العاصمة بكافة المدن الأخرى.</p></div>
+        <section class="services-grid">
+            <div class="service-card">
+                <div style="font-size: 1.5rem;">⏱️</div>
+                <h4>60 دقيقة</h4>
+                <p style="font-size:0.75rem; margin:0;">داخل نطاق طرابلس الكبرى</p>
+            </div>
+            <div class="service-card">
+                <div style="font-size: 1.5rem;">🛡️</div>
+                <h4>تأمين شامل</h4>
+                <p style="font-size:0.75rem; margin:0;">ضمان 100% على الطرود</p>
+            </div>
+            <div class="service-card">
+                <div style="font-size: 1.5rem;">✈️</div>
+                <h4>شحن خارجي</h4>
+                <p style="font-size:0.75rem; margin:0;">ربط طرابلس بكافة المدن</p>
+            </div>
         </section>
 
-        <div style="padding: 20px; color: #888; font-size: 0.9rem;">
-            📍 المقر الرئيسي: طرابلس، ليبيا.
+        <div style="margin: 40px 0; font-size: 0.9rem; color: #666;">
+            <p>📍 حي الأندلس، طرابلس - ليبيا</p>
         </div>
     </main>
 
-    <a href="https://wa.me/218917021437" class="cta-btn">
-        <span>اطلب المندوب الآن</span> 💬
-    </a>
+    <div class="order-bar">
+        <a href="https://wa.me/218917021437" class="cta-btn">
+            <span>اطلب الخدمة الآن</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="30" alt="WhatsApp">
+        </a>
+    </div>
 
-    <footer style="padding-bottom: 120px; font-size: 0.7rem; color: #ccc;">
-        &copy; 2026 NHRDP Logistics. All Rights Reserved.
+    <footer style="padding-bottom: 150px; color: #bbb; font-size: 0.8rem;">
+        &copy; 2026 NHRDP Logistics | Crafted for Excellence
     </footer>
+
 </body>
 </html>
