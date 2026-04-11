@@ -3,169 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NHRDP | التوصيل الفاخر في ليبيا</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>NHRDP | فخامة التوصيل والأمان في طرابلس</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F1D592 50%, #B8860B 100%);
-            --dark-royal: #1A1A1A;
-            --soft-white: #FAFAFA;
+            --gold-primary: #C5A028;
+            --gold-light: #F1D592;
+            --dark-deep: #111111;
+            --soft-gray: #F8F9FA;
         }
-        body { font-family: 'Tajawal', sans-serif; margin: 0; background: var(--soft-white); color: var(--dark-royal); line-height: 1.6; }
-        
-        /* هيدر بتصميم زجاجي */
+
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Tajawal', sans-serif; 
+            margin: 0; 
+            background: var(--soft-gray); 
+            color: var(--dark-deep);
+            overflow-x: hidden;
+        }
+
+        /* تنسيق الهيدر */
         header { 
-            padding: 15px; 
-            background: rgba(255, 255, 255, 0.9); 
-            backdrop-filter: blur(10px);
+            padding: 15px 20px; 
+            background: #ffffff; 
             position: sticky; 
             top: 0; 
             z-index: 1000; 
-            border-bottom: 2px solid #D4AF37;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border-bottom: 3px solid var(--gold-primary);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
         }
         .logo-text { 
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 2.8rem; 
+            font-size: 3rem; 
             font-weight: 900; 
             margin: 0;
-            letter-spacing: -1px;
+            background: linear-gradient(135deg, var(--gold-primary), #B8860B);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .hero { padding: 40px 20px; text-align: center; }
+        .hero { padding: 30px 15px; max-width: 600px; margin: 0 auto; }
+        
+        /* الصورة الرئيسية */
         .main-img { 
             width: 100%; 
-            max-width: 450px; 
-            border-radius: 30px; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
-            margin-bottom: 30px; 
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: transform 0.5s ease;
+            border-radius: 25px; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12); 
+            margin-bottom: 25px; 
+            border: 2px solid var(--gold-primary);
+            display: block;
         }
-        .main-img:hover { transform: translateY(-10px); }
 
-        /* صندوق الدفع الإلكتروني المتميز */
-        .pos-badge {
-            background: var(--dark-royal);
-            color: #D4AF37;
+        h2 { font-size: 2rem; line-height: 1.4; margin-bottom: 15px; font-weight: 800; }
+        .highlight-text { color: var(--gold-primary); }
+
+        /* صندوق الأوصاف الجديدة */
+        .description-list {
+            text-align: right;
+            background: white;
             padding: 20px;
             border-radius: 20px;
-            margin: 20px auto;
-            max-width: 450px;
-            border-right: 5px solid #D4AF37;
+            margin: 20px 0;
+            border-right: 6px solid var(--gold-primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+        .description-list div {
+            margin-bottom: 12px;
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 15px;
-            font-weight: bold;
+            gap: 10px;
         }
 
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 15px;
-            padding: 20px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .service-card {
-            background: #fff;
+        /* ميزة الدفع الإلكتروني */
+        .pos-card {
+            background: var(--dark-deep);
+            color: var(--gold-light);
             padding: 20px;
             border-radius: 20px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            margin: 25px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* شبكة الخدمات */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        .grid-item {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
             border: 1px solid #eee;
             transition: 0.3s;
         }
-        .service-card:hover { border-color: #D4AF37; }
-        .service-card h4 { color: #D4AF37; margin: 10px 0 5px; font-size: 1.2rem; }
+        .grid-item:hover { border-color: var(--gold-primary); transform: translateY(-3px); }
+        .grid-item h4 { margin: 5px 0; color: var(--gold-primary); font-size: 1.2rem; }
+        .grid-item p { margin: 0; font-size: 0.85rem; color: #666; }
 
-        /* زر الطلب العائم */
-        .order-bar {
+        /* زر الواتساب العائم */
+        .cta-container {
             position: fixed;
-            bottom: 30px;
+            bottom: 25px;
             left: 50%;
             transform: translateX(-50%);
             width: 90%;
-            max-width: 400px;
-            z-index: 2000;
+            max-width: 420px;
+            z-index: 9999;
         }
         .cta-btn { 
-            background: linear-gradient(90deg, #25D366 0%, #128C7E 100%);
-            color: #fff; 
-            padding: 20px; 
-            border-radius: 100px; 
+            background: linear-gradient(90deg, #25D366, #128C7E);
+            color: white; 
+            padding: 18px; 
+            border-radius: 50px; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            gap: 15px; 
+            gap: 12px; 
             text-decoration: none; 
-            font-size: 1.4rem; 
+            font-size: 1.35rem; 
             font-weight: bold; 
-            box-shadow: 0 15px 30px rgba(37,211,102,0.3);
+            box-shadow: 0 12px 25px rgba(37,211,102,0.4);
         }
 
-        /* تحريك بسيط عند الظهور */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        main { animation: fadeInUp 0.8s ease-out; }
+        footer { padding: 40px 20px 140px; color: #aaa; font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
     <header>
         <h1 class="logo-text">NHRDP</h1>
-        <div style="font-size: 0.9rem; color: #888; font-weight: bold;">التميز في النقل والخدمات اللوجستية</div>
+        <div style="color: #666; font-weight: 500; font-size: 0.9rem;">الخيار النخبة للتوصيل والطرود</div>
     </header>
 
     <main class="hero">
-        <img src="nhrdp1.jpg" alt="NHRDP Luxury Delivery" class="main-img">
+        <img src="nhrdp1.jpg" alt="NHRDP Delivery Services" class="main-img">
         
-        <h2 style="font-size: 2.2rem; margin-bottom: 10px; font-weight: 900;">سرعة البرق..<br><span style="color:#B8860B">بمعايير عالمية</span></h2>
-        
-        <div class="pos-badge">
-            <span style="font-size: 2rem;">💳</span>
-            <div>
-                نقبل الدفع بجميع البطاقات المصرفية
-                <div style="font-size: 0.8rem; opacity: 0.8;">سداد | تداول | بطاقة مصرفية</div>
-            </div>
+        <h2>خدمة <span class="highlight-text">تاكسي VIP</span> <br>لعند باب بيتك في دقائق!</h2>
+
+        <div class="description-list">
+            <div>📍 <span>تاكسي خاص لعند باب بيتك في أي مكان.</span></div>
+            <div>📦 <span>توصيل أمانات وطرود بكل ثقة وخصوصية.</span></div>
+            <div>✉️ <span>نقل مستندات وأوراق رسمية بضمان تام.</span></div>
+            <div>🛒 <span>قضاء احتياجاتك من السوق والصيدلية وتوصيلها فوراً.</span></div>
         </div>
 
-        <section class="services-grid">
-            <div class="service-card">
-                <div style="font-size: 1.5rem;">⏱️</div>
-                <h4>60 دقيقة</h4>
-                <p style="font-size:0.75rem; margin:0;">داخل نطاق طرابلس الكبرى</p>
+        <div class="pos-card">
+            <div style="font-size: 1.2rem; font-weight: bold;">💳 وفرنا عليك عناء الكاش!</div>
+            <p style="margin:0; font-size: 0.9rem; opacity: 0.9;">
+                جهاز الدفع الإلكتروني **P.O.S** متوفر مع المندوب عند الاستلام.
+                <br>(سداد - تداول - بطاقة مصرفية)
+            </p>
+        </div>
+
+        <section class="grid-container">
+            <div class="grid-item">
+                <h4>⏱️ 30 دقيقة</h4>
+                <p>أقصى سرعة توصيل داخل طرابلس.</p>
             </div>
-            <div class="service-card">
-                <div style="font-size: 1.5rem;">🛡️</div>
-                <h4>تأمين شامل</h4>
-                <p style="font-size:0.75rem; margin:0;">ضمان 100% على الطرود</p>
+            <div class="grid-item">
+                <h4>🛡️ ثقة تامة</h4>
+                <p>أماناتك في أيدي أمينة ومدربة.</p>
             </div>
-            <div class="service-card">
-                <div style="font-size: 1.5rem;">✈️</div>
-                <h4>شحن خارجي</h4>
-                <p style="font-size:0.75rem; margin:0;">ربط طرابلس بكافة المدن</p>
+            <div class="grid-item">
+                <h4>🚗 مشوارك</h4>
+                <p>سيارات حديثة ومكيفة لراحتك.</p>
+            </div>
+            <div class="grid-item">
+                <h4>🇱🇾 ليبيا</h4>
+                <p>خدماتنا تربط العاصمة بكل المدن.</p>
             </div>
         </section>
 
-        <div style="margin: 40px 0; font-size: 0.9rem; color: #666;">
-            <p>📍 حي الأندلس، طرابلس - ليبيا</p>
+        <div style="margin: 30px 0; font-size: 0.9rem; color: #888;">
+            📍 المركز الرئيسي: طرابلس، ليبيا.
         </div>
     </main>
 
-    <div class="order-bar">
+    <div class="cta-container">
         <a href="https://wa.me/218917021437" class="cta-btn">
-            <span>اطلب الخدمة الآن</span>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="30" alt="WhatsApp">
+            <span>اطلب المندوب الآن</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="28" alt="واتساب">
         </a>
     </div>
 
-    <footer style="padding-bottom: 150px; color: #bbb; font-size: 0.8rem;">
-        &copy; 2026 NHRDP Logistics | Crafted for Excellence
+    <footer>
+        &copy; 2026 NHRDP Logistics & Rapid Delivery. <br>جميع الحقوق محفوظة.
     </footer>
 
 </body>
