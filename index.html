@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- تحسين محركات البحث SEO -->
     <title>نهضة ليبيا - nhrdp.ly | تاكسي توصيل فوري واحترافي في ليبيا</title>
     <meta name="description" content="تطبيق نهضة ليبيا لحجز سيارات الأجرة والتوصيل الفوري. نضمن لك الراحة والأمان مع سائقين محترفين. احجز تاكسيك الآن عبر nhrdp.ly">
     <meta name="keywords" content="تاكسي ليبيا, توصيل فوري, نهضة ليبيا, nhrdp, حجز تاكسي, خرائط جوجل, توصيل طرابلس, بنغازي">
     <meta name="author" content="نهضة ليبيا">
     <link rel="canonical" href="https://nhrdp.ly">
+    <!-- Open Graph / فيسبوك -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nhrdp.ly">
     <meta property="og:title" content="نهضة ليبيا | تاكسي توصيل فوري">
     <meta property="og:description" content="احجز تاكسيك الآن مع نهضة ليبيا. أسرع خدمة توصيل في ليبيا.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1589829545856-d10d557cf447?q=80&w=2070&auto=format&fit=crop">
+    <!-- الخطوط والأيقونات -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -279,6 +282,42 @@
             color: #0b0c1e;
         }
 
+        /* أدوات الاتصال داخل نموذج الحجز */
+        .contact-options {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin: 20px 0 10px;
+        }
+        .contact-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px;
+            border-radius: 40px;
+            font-weight: 700;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .whatsapp-btn {
+            background: #25D366;
+        }
+        .whatsapp-btn:hover {
+            background: #1da851;
+            transform: scale(1.02);
+        }
+        .email-btn {
+            background: #1a1e3a;
+        }
+        .email-btn:hover {
+            background: #0b0c1e;
+            transform: scale(1.02);
+        }
+
         .map-container {
             flex: 1 1 400px;
             border-radius: 40px;
@@ -325,47 +364,37 @@
         footer {
             background: #111322;
             color: #ccc;
-            padding: 40px 0;
+            padding: 30px 0;
             text-align: center;
             border-top: 3px solid #ffd700;
         }
-
-        /* تنسيقات أزرار الاتصال الجديدة */
-        .contact-methods {
+        .footer-contact {
             display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin: 25px 0;
             flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
         }
-
-        .btn-whatsapp, .btn-email {
-            padding: 12px 28px;
+        .footer-contact a {
+            color: white;
             text-decoration: none;
-            color: #ffffff;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            font-size: 1.2rem;
+            background: rgba(255,215,0,0.1);
+            padding: 10px 25px;
+            border-radius: 50px;
+            transition: 0.3s;
+            border: 1px solid #ffd70033;
         }
-
-        .btn-whatsapp {
-            background-color: #25D366;
+        .footer-contact a i {
+            margin-left: 8px;
+            color: #ffd700;
         }
-
-        .btn-email {
-            background-color: #EA4335;
+        .footer-contact a:hover {
+            background: #ffd700;
+            color: #0b0c1e;
         }
-
-        .btn-whatsapp:hover, .btn-email:hover {
-            transform: translateY(-3px);
-            opacity: 0.9;
-            color: #fff;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        .footer-contact a:hover i {
+            color: #0b0c1e;
         }
 
         /* تحسينات الهاتف */
@@ -373,8 +402,6 @@
             .hero h2 { font-size: 2.5rem; }
             .header-flex { flex-direction: column; gap: 10px; }
             nav a { margin: 0 8px; }
-            .contact-methods { flex-direction: column; align-items: center; }
-            .btn-whatsapp, .btn-email { width: 100%; justify-content: center; max-width: 300px; }
         }
     </style>
 </head>
@@ -393,11 +420,12 @@
             <a href="#home">الرئيسية</a>
             <a href="#fleet">أسطولنا</a>
             <a href="#book">احجز الآن</a>
-            <a href="#contact">اتصل بنا</a>
+            <a href="#contact">اتصل</a>
         </nav>
     </div>
 </header>
 
+<!-- القسم الرئيسي الباهر -->
 <section id="home" class="hero">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
@@ -407,20 +435,24 @@
     </div>
 </section>
 
+<!-- قسم صور تاكسي احترافية (صور حقيقية) -->
 <section id="fleet" class="fleet-section">
     <div class="container">
         <div class="section-title">أسطولنا العصري</div>
         <div class="car-gallery">
+            <!-- صورة 1 -->
             <div class="car-card">
                 <img src="https://images.unsplash.com/photo-1550355291-f33e4a54f207?q=80&w=2070&auto=format&fit=crop" alt="تاكسي أصفر فاخر في ليبيا">
                 <h3>تاكسي VIP</h3>
                 <p>سيارات حديثة مكيفة مع سائقين محترفين – مثالية لرجال الأعمال.</p>
             </div>
+            <!-- صورة 2 -->
             <div class="car-card">
                 <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=2070&auto=format&fit=crop" alt="تاكسي عائلي واسع">
                 <h3>تاكسي عائلي</h3>
                 <p>مساحة واسعة للأمتعة والعائلات، راحة وأمان على الطرق الليبية.</p>
             </div>
+            <!-- صورة 3 -->
             <div class="car-card">
                 <img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1964&auto=format&fit=crop" alt="تاكسي كهربائي صديق للبيئة">
                 <h3>كهربائي ذكي</h3>
@@ -430,16 +462,18 @@
     </div>
 </section>
 
+<!-- نموذج بيانات العميل + خرائط جوجل -->
 <section id="book" class="booking-section">
     <div class="container">
         <div class="section-title">احجز تاكسيك الآن – أدخل بياناتك</div>
         <div class="booking-grid">
+            <!-- نموذج العميل (بيانات العميل كاملة) -->
             <div class="booking-form">
                 <h3><i class="fas fa-user-check" style="color:#ffd700;"></i> بيانات العميل</h3>
                 <form action="#" method="post">
                     <div class="form-group">
                         <label>الاسم الكامل *</label>
-                        <input type="text" name="fullname" placeholder="مثال: أحمد محمد" required>
+                        <input type="text" name="fullname" placeholder="مثال: أحمد محمد القذافي" required>
                     </div>
                     <div class="form-group">
                         <label>رقم الهاتف *</label>
@@ -465,12 +499,24 @@
                             <option>كهربائي – اقتصادي</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn-submit"><i class="fas fa-map-marked-alt"></i> تأكيد الحجز</button>
-                    <p style="margin-top:15px; font-size:0.9rem; color:gray;">سيتم التواصل معك فوراً لتأكيد الرحلة.</p>
+                    <button type="submit" class="btn-submit"><i class="fas fa-map-marked-alt"></i> تأكيد الحجز وربط الخريطة</button>
+                    
+                    <!-- أدوات الاتصال المضافة داخل النموذج -->
+                    <div class="contact-options">
+                        <a href="https://wa.me/00218917021437" target="_blank" class="contact-btn whatsapp-btn">
+                            <i class="fab fa-whatsapp fa-lg"></i> واتساب
+                        </a>
+                        <a href="mailto:nosa6512@gmail.com" class="contact-btn email-btn">
+                            <i class="far fa-envelope"></i> إيميل
+                        </a>
+                    </div>
+                    <p style="margin-top:15px; font-size:0.9rem; color:gray;">أو تواصل معنا مباشرة. سيتم الرد فوراً.</p>
                 </form>
             </div>
 
+            <!-- ربط الموقع مع خرائط جوجل - خريطة تفاعلية -->
             <div class="map-container">
+                <!-- اطار خرائط جوجل مع وضع العلامة على ليبيا / طرابلس كمثال -->
                 <iframe 
                     title="خريطة نهضة ليبيا تاكسي"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1374384.3292966545!2d12.366666667776!3d32.875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13a88cdd4d1f5c43%3A0x9c6a9e4f7e8e8f0!2z2KfZhNmF2YbZg9in!5e0!3m2!1sar!2sly!4v1713000000000"
@@ -484,6 +530,7 @@
     </div>
 </section>
 
+<!-- مميزات إضافية تبهر الزائر -->
 <section class="features">
     <div class="container">
         <div class="section-title" style="color:white;">لماذا نهضة ليبيا؟</div>
@@ -509,29 +556,29 @@
 
 <footer id="contact">
     <div class="container">
-        <h3 style="color:#ffd700; margin-bottom:10px; font-size: 2rem;">تواصل معنا</h3>
-        <p>فريق خدمة العملاء جاهز للرد على استفساراتكم في أي وقت</p>
+        <h3 style="color:#ffd700; margin-bottom:20px;">نهضة ليبيا - nhrdp.ly</h3>
         
-        <div class="contact-methods">
-            <a href="https://wa.me/218917021437" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
-                <i class="fab fa-whatsapp fa-lg"></i> تواصل عبر واتساب
+        <!-- أدوات الاتصال في التذييل مع بياناتك -->
+        <div class="footer-contact">
+            <a href="https://wa.me/00218917021437" target="_blank">
+                <i class="fab fa-whatsapp"></i> واتساب: 00218-91-7021437
             </a>
-            <a href="mailto:nosa6512@gmail.com" class="btn-email">
-                <i class="fas fa-envelope fa-lg"></i> أرسل بريداً إلكترونياً
+            <a href="mailto:nosa6512@gmail.com">
+                <i class="far fa-envelope"></i> nosa6512@gmail.com
             </a>
         </div>
-
-        <div style="margin-top:35px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-            <p>© 2026 جميع الحقوق محفوظة لشركة نهضة ليبيا.</p>
-            <div style="margin-top:15px;">
-                <a href="#" style="color:#ffd700; margin:0 10px; transition: 0.3s;"><i class="fab fa-facebook fa-2x"></i></a>
-                <a href="#" style="color:#ffd700; margin:0 10px; transition: 0.3s;"><i class="fab fa-instagram fa-2x"></i></a>
-                <a href="#" style="color:#ffd700; margin:0 10px; transition: 0.3s;"><i class="fab fa-x-twitter fa-2x"></i></a>
-            </div>
+        
+        <p><i class="fas fa-phone-alt"></i>  +218 21 123 4567  &nbsp;&nbsp;|&nbsp;&nbsp; <i class="fas fa-envelope"></i> nosa6512@gmail.com</p>
+        <p>© 2026 جميع الحقوق محفوظة. موقع تاكسي توصيل احترافي – مُحسَّن لمحركات البحث.</p>
+        <div style="margin-top:25px;">
+            <a href="#" style="color:#ffd700; margin:0 10px;"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="#" style="color:#ffd700; margin:0 10px;"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="#" style="color:#ffd700; margin:0 10px;"><i class="fab fa-x-twitter fa-2x"></i></a>
         </div>
     </div>
 </footer>
 
+<!-- تحسينات SEO إضافية: بيانات منظمة (Schema.org) لمحركات البحث -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -548,8 +595,8 @@
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+218-91-7021437",
-    "email": "nosa6512@gmail.com",
-    "contactType": "customer service"
+    "contactType": "customer service",
+    "email": "nosa6512@gmail.com"
   }
 }
 </script>
