@@ -2,208 +2,531 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نهضة ليبيا - nhrdp.ly | تاكسي توصيل فوري</title>
-    <meta name="description" content="تطبيق نهضة ليبيا لحجز سيارات الأجرة والتوصيل الفوري. نضمن لك الراحة والأمان.">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <!-- تحسين محركات البحث SEO -->
+    <title>نهضة ليبيا - nhrdp.ly | تاكسي توصيل فوري واحترافي في ليبيا</title>
+    <meta name="description" content="تطبيق نهضة ليبيا لحجز سيارات الأجرة والتوصيل الفوري. نضمن لك الراحة والأمان مع سائقين محترفين. احجز تاكسيك الآن عبر nhrdp.ly">
+    <meta name="keywords" content="تاكسي ليبيا, توصيل فوري, نهضة ليبيا, nhrdp, حجز تاكسي, خرائط جوجل, توصيل طرابلس, بنغازي">
+    <meta name="author" content="نهضة ليبيا">
+    <link rel="canonical" href="https://nhrdp.ly">
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nhrdp.ly">
+    <meta property="og:title" content="نهضة ليبيا | تاكسي توصيل فوري">
+    <meta property="og:description" content="احجز تاكسيك الآن مع نهضة ليبيا. أسرع خدمة توصيل في ليبيا.">
+    <meta property="og:image" content="https://images.pexels.com/photos/11691571/pexels-photo-11691571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1">
+    <!-- الخطوط والأيقونات -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
     <style>
-        :root {
-            --gold: #ffd700;
-            --dark: #0b0c1e;
-            --light-dark: #1a1e3a;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Cairo', sans-serif;
             background-color: #fefefe;
             color: #1e1e2f;
-            line-height: 1.6;
+            line-height: 1.5;
             overflow-x: hidden;
         }
 
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 15px; }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
 
-        /* Header */
+        /* ========== الهيدر متجاوب ========== */
         header {
-            background: linear-gradient(145deg, var(--dark) 0%, var(--light-dark) 100%);
+            background: linear-gradient(145deg, #0b0c1e 0%, #1a1e3a 100%);
             color: white;
-            padding: 10px 0;
+            padding: 12px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            border-bottom: 2px solid var(--gold);
         }
 
         .header-flex {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            flex-direction: column; /* تحسين للجوال */
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        @media (min-width: 768px) {
-            .header-flex { flex-direction: row; }
+        .logo {
+            display: flex;
+            flex-direction: column;
         }
 
         .logo h1 {
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: var(--gold);
-            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            font-size: clamp(1.5rem, 5vw, 2rem);
+            font-weight: 800;
+            background: linear-gradient(to left, #ffd700, #ffb347);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .logo span {
+            color: #ffd700;
+            font-size: 0.85rem;
+            font-weight: 400;
         }
 
         .domain-badge {
-            background: var(--gold);
-            color: var(--dark);
-            padding: 2px 12px;
-            border-radius: 20px;
-            font-weight: 800;
-            margin: 5px 0;
+            background: #ffd700;
+            color: #0b0c1e;
+            padding: 5px 12px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 0 10px rgba(255,215,0,0.5);
+            white-space: nowrap;
         }
 
-        nav { margin-top: 10px; }
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 5px;
+        }
+
         nav a {
             color: #f0f0f0;
-            margin: 0 8px;
+            padding: 6px 10px;
             text-decoration: none;
             font-weight: 600;
+            transition: 0.3s;
             font-size: 0.9rem;
+            white-space: nowrap;
         }
 
-        /* Hero Section - استخدام nhrdp1.jpg */
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* ========== القسم الرئيسي متجاوب ========== */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('nhrdp1.jpg') center/cover no-repeat;
-            min-height: 60vh;
+            background: url('https://images.pexels.com/photos/11691571/pexels-photo-11691571.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') center/cover no-repeat;
+            min-height: 70vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 40px 20px;
+            position: relative;
+            border-bottom: 5px solid #ffd700;
         }
 
-        .hero h2 { font-size: 2rem; font-weight: 900; margin-bottom: 15px; }
-        .hero h2 span { color: var(--gold); }
-        .hero p { font-size: 1.1rem; margin-bottom: 25px; }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.5) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            padding: 30px 0;
+            width: 100%;
+        }
+
+        .hero h2 {
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.3;
+            text-shadow: 3px 3px 10px black;
+            margin-bottom: 15px;
+        }
+
+        .hero .gold {
+            color: #ffd700;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 4vw, 1.4rem);
+            margin-bottom: 25px;
+            text-shadow: 2px 2px 6px black;
+        }
 
         .btn {
             display: inline-block;
-            background: var(--gold);
-            color: var(--dark);
-            padding: 12px 30px;
+            background: #ffd700;
+            color: #0b0c1e;
+            padding: 14px 30px;
             border-radius: 50px;
             font-weight: 800;
+            font-size: clamp(1.1rem, 4vw, 1.3rem);
             text-decoration: none;
+            box-shadow: 0 8px 20px rgba(255,215,0,0.4);
             transition: 0.3s;
-            box-shadow: 0 5px 15px rgba(255,215,0,0.3);
+            border: 2px solid transparent;
         }
 
-        /* Booking Section */
-        .booking-section { padding: 40px 0; background: #fff; }
-        .booking-grid {
-            display: flex;
-            flex-direction: column;
+        .btn:hover {
+            background: #1a1e3a;
+            color: #ffd700;
+            border-color: #ffd700;
+        }
+
+        /* ========== قسم الأسطول متجاوب ========== */
+        .fleet-section {
+            padding: 50px 0;
+            background: #f8f9ff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: clamp(1.8rem, 6vw, 2.5rem);
+            font-weight: 800;
+            margin-bottom: 35px;
+            color: #0b0c1e;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: "";
+            width: 80px;
+            height: 4px;
+            background: #ffd700;
+            display: block;
+            margin: 12px auto;
+            border-radius: 5px;
+        }
+
+        .car-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
         }
 
-        @media (min-width: 992px) {
-            .booking-grid { flex-direction: row; }
+        .car-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #ececec;
+        }
+
+        .car-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px rgba(255,215,0,0.15);
+            border-color: #ffd700;
+        }
+
+        .car-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 3px solid #ffd700;
+        }
+
+        .car-card h3 {
+            padding: 15px 15px 5px;
+            font-size: 1.4rem;
+            color: #1a1e3a;
+        }
+
+        .car-card p {
+            padding: 0 15px 15px;
+            color: #4a4a6a;
+            font-size: 0.95rem;
+        }
+
+        /* ========== قسم الحجز متجاوب ========== */
+        .booking-section {
+            padding: 50px 0;
+            background: white;
+        }
+
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .booking-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         .booking-form {
-            flex: 1;
-            background: #f9f9f9;
-            padding: 25px;
-            border-radius: 20px;
-            border: 1px solid #eee;
+            background: #ffffff;
+            padding: 25px 20px;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border: 1px solid #f0f0f0;
         }
 
-        .form-group { margin-bottom: 15px; }
-        .form-group label { display: block; font-weight: 700; margin-bottom: 5px; }
-        .form-group input, .form-group select {
+        .booking-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #0b0c1e;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #1e1e2f;
+            font-size: 0.95rem;
+        }
+
+        .form-group input, 
+        .form-group select {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-family: 'Cairo';
+            padding: 14px 16px;
+            border: 2px solid #e2e2e2;
+            border-radius: 25px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            background: #fafafa;
+        }
+
+        .form-group input:focus, 
+        .form-group select:focus {
+            border-color: #ffd700;
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(255,215,0,0.2);
         }
 
         .btn-submit {
-            width: 100%;
-            padding: 15px;
-            background: var(--dark);
+            background: #0b0c1e;
             color: white;
-            border: none;
-            border-radius: 10px;
+            width: 100%;
+            padding: 16px;
+            font-size: 1.2rem;
             font-weight: 800;
+            border-radius: 50px;
+            border: none;
             cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background: #ffd700;
+            color: #0b0c1e;
+        }
+
+        /* أدوات الاتصال */
+        .contact-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin: 20px 0 10px;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 10px;
+            border-radius: 40px;
+            font-weight: 700;
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+        }
+
+        .whatsapp-btn:hover {
+            background: #1da851;
+        }
+
+        .email-btn {
+            background: #1a1e3a;
+        }
+
+        .email-btn:hover {
+            background: #0b0c1e;
         }
 
         .map-container {
-            flex: 1;
-            height: 300px;
-            border-radius: 20px;
+            border-radius: 25px;
             overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             border: 4px solid white;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 400px;
+            background: #ddd;
+            width: 100%;
         }
 
-        /* Footer & Contact Tools */
-        footer {
-            background: var(--dark);
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ========== المميزات متجاوبة ========== */
+        .features {
+            background: #0b0c1e;
             color: white;
-            padding: 40px 0;
+            padding: 50px 0;
             text-align: center;
         }
 
-        .contact-btns {
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feat {
+            background: rgba(255,255,255,0.05);
+            padding: 25px 15px;
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            border: 1px solid #ffd70033;
+        }
+
+        .feat i {
+            font-size: 2.5rem;
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+
+        .feat h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .feat p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* ========== الفوتر متجاوب ========== */
+        footer {
+            background: #111322;
+            color: #ccc;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 3px solid #ffd700;
+        }
+
+        .footer-contact {
             display: flex;
-            flex-direction: column;
-            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
             margin: 20px 0;
-            align-items: center;
         }
 
-        .btn-wa {
-            background: #25D366;
+        .footer-contact a {
             color: white;
-            width: 100%;
-            max-width: 280px;
-            padding: 12px;
-            border-radius: 10px;
             text-decoration: none;
-            font-weight: 800;
-            display: flex;
+            font-size: 1rem;
+            background: rgba(255,215,0,0.1);
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: 0.3s;
+            border: 1px solid #ffd70033;
+            display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
+            gap: 8px;
         }
 
-        .btn-mail {
-            background: #EA4335;
+        .footer-contact a i {
+            color: #ffd700;
+        }
+
+        .footer-contact a:hover {
+            background: #ffd700;
+            color: #0b0c1e;
+        }
+
+        .footer-contact a:hover i {
+            color: #0b0c1e;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            margin: 10px 0;
+        }
+
+        .social-icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a {
+            color: #ffd700;
+            font-size: 1.5rem;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
             color: white;
-            width: 100%;
-            max-width: 280px;
-            padding: 12px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            transform: scale(1.1);
         }
 
-        @media (max-width: 600px) {
-            .hero h2 { font-size: 1.6rem; }
-            nav a { font-size: 0.8rem; margin: 0 4px; }
+        /* ========== تحسينات إضافية للجوال ========== */
+        @media (max-width: 480px) {
+            .header-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            nav a {
+                padding: 5px 8px;
+                font-size: 0.85rem;
+            }
+            
+            .hero {
+                min-height: 60vh;
+            }
+            
+            .car-card img {
+                height: 160px;
+            }
+            
+            .booking-form {
+                padding: 20px 15px;
+            }
+            
+            .contact-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-contact a {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* إصلاح مشكلة ظهور الصور */
+        img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -212,92 +535,185 @@
 <header>
     <div class="container header-flex">
         <div class="logo">
-            <h1>نهضة ليبيا <i class="fas fa-taxi"></i></h1>
+            <h1>نهضة ليبيا <i class="fas fa-taxi" style="color: #ffd700; font-size: 1.2rem;"></i></h1>
+            <span>توصيل آمن وسريع</span>
         </div>
-        <div class="domain-badge">nhrdp.ly</div>
+        <div class="domain-badge">
+            nhrdp.ly
+        </div>
         <nav>
             <a href="#home">الرئيسية</a>
+            <a href="#fleet">أسطولنا</a>
             <a href="#book">احجز الآن</a>
-            <a href="#contact">اتصل بنا</a>
+            <a href="#contact">اتصل</a>
         </nav>
     </div>
 </header>
 
+<!-- القسم الرئيسي -->
 <section id="home" class="hero">
-    <div class="container">
-        <h2>وجهتك في <span>لحظات</span> مع تاكسي نهضة ليبيا</h2>
-        <p>أسرع خدمة توصيل في كافة المدن الليبية، أمان وراحة على مدار الساعة.</p>
-        <a href="https://wa.me/218917021437" class="btn"><i class="fab fa-whatsapp"></i> احجز عبر واتساب</a>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+        <h2>وجهتك في <span class="gold">لحظات</span><br>مع تاكسي نهضة ليبيا</h2>
+        <p>خدمة توصيل فاخرة تغطي كافة المدن الليبية. احجز تاكسيك خلال ثوانٍ واستمتع برحلة مريحة.</p>
+        <a href="#book" class="btn"><i class="fas fa-car"></i> احجز رحلتك الآن</a>
     </div>
 </section>
 
+<!-- قسم صور التاكسي -->
+<section id="fleet" class="fleet-section">
+    <div class="container">
+        <div class="section-title">أسطولنا العصري</div>
+        <div class="car-gallery">
+            <div class="car-card">
+                <img src="https://images.pexels.com/photos/11691571/pexels-photo-11691571.jpeg?auto=compress&cs=tinysrgb&w=600" alt="تاكسي فاخر في ليبيا" loading="lazy">
+                <h3>تاكسي VIP</h3>
+                <p>سيارات حديثة مكيفة مع سائقين محترفين – مثالية لرجال الأعمال.</p>
+            </div>
+            <div class="car-card">
+                <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=600" alt="تاكسي عائلي واسع" loading="lazy">
+                <h3>تاكسي عائلي</h3>
+                <p>مساحة واسعة للأمتعة والعائلات، راحة وأمان على الطرق الليبية.</p>
+            </div>
+            <div class="car-card">
+                <img src="https://images.pexels.com/photos/210143/pexels-photo-210143.jpeg?auto=compress&cs=tinysrgb&w=600" alt="تاكسي كهربائي صديق للبيئة" loading="lazy">
+                <h3>كهربائي ذكي</h3>
+                <p>صديق للبيئة بتقنية عالية، توصيل سريع داخل المدينة.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- نموذج الحجز والخريطة -->
 <section id="book" class="booking-section">
     <div class="container">
+        <div class="section-title">احجز تاكسيك الآن – أدخل بياناتك</div>
         <div class="booking-grid">
             <div class="booking-form">
-                <h3><i class="fas fa-user-edit"></i> طلب تاكسي سريع</h3>
-                <form action="#" style="margin-top: 15px;">
+                <h3><i class="fas fa-user-check" style="color:#ffd700;"></i> بيانات العميل</h3>
+                <form action="#" method="post">
                     <div class="form-group">
-                        <label>الاسم</label>
-                        <input type="text" placeholder="مثلاً: أحمد محمد" required>
+                        <label>الاسم الكامل *</label>
+                        <input type="text" name="fullname" placeholder="مثال: أحمد محمد" required>
                     </div>
                     <div class="form-group">
-                        <label>رقم الهاتف</label>
-                        <input type="tel" placeholder="091XXXXXXX" required>
+                        <label>رقم الهاتف *</label>
+                        <input type="tel" name="phone" placeholder="+218 9X XXX XXXX" required>
                     </div>
                     <div class="form-group">
-                        <label>موقع الانطلاق</label>
-                        <input type="text" placeholder="أين أنت الآن؟" required>
+                        <label>البريد الإلكتروني</label>
+                        <input type="email" name="email" placeholder="example@nhrdp.ly">
                     </div>
-                    <button type="button" onclick="alert('سيتم توجيهك للواتساب لتأكيد الرحلة')" class="btn-submit">تأكيد الحجز</button>
+                    <div class="form-group">
+                        <label>نقطة الانطلاق *</label>
+                        <input type="text" name="pickup" placeholder="شارع أو معلم قريب" required>
+                    </div>
+                    <div class="form-group">
+                        <label>الوجهة *</label>
+                        <input type="text" name="destination" placeholder="المطار، الفندق..." required>
+                    </div>
+                    <div class="form-group">
+                        <label>نوع التاكسي</label>
+                        <select name="car_type">
+                            <option>VIP – فاخر</option>
+                            <option>عائلي – 7 مقاعد</option>
+                            <option>كهربائي – اقتصادي</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-submit"><i class="fas fa-map-marked-alt"></i> تأكيد الحجز</button>
+                    
+                    <div class="contact-options">
+                        <a href="https://wa.me/00218917021437" target="_blank" class="contact-btn whatsapp-btn">
+                            <i class="fab fa-whatsapp"></i> واتساب
+                        </a>
+                        <a href="mailto:nosa6512@gmail.com" class="contact-btn email-btn">
+                            <i class="far fa-envelope"></i> إيميل
+                        </a>
+                    </div>
+                    <p style="margin-top:15px; font-size:0.9rem; color:gray; text-align:center;">أو تواصل معنا مباشرة. سيتم الرد فوراً.</p>
                 </form>
             </div>
 
             <div class="map-container">
                 <iframe 
-                    width="100%" height="100%" frameborder="0" style="border:0"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107328.32483258525!2d13.10237785!3d32.8833989!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13a89292857497d3%3A0x95996f0156d95950!2z2LfYsdin2KjZhNiz!5e0!3m2!1sar!2sly!4v1700000000000" 
-                    allowfullscreen>
+                    title="خريطة نهضة ليبيا تاكسي"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3437195.453441484!2d9.810949999999999!3d27.035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13a88cdd4d1f5c43%3A0x9c6a9e4f7e8e8f0!2z2KfZhNmF2YbZg9in!5e0!3m2!1sar!2sly!4v1713000000000"
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
+            </div>
+        </div>
+        <p style="text-align:center; margin-top:20px;"><i class="fas fa-map-pin" style="color:#ffd700;"></i> نغطي كامل المدن الليبية – <strong>nhrdp.ly</strong> في خدمتك أينما كنت.</p>
+    </div>
+</section>
+
+<!-- المميزات -->
+<section class="features">
+    <div class="container">
+        <div class="section-title" style="color:white;">لماذا نهضة ليبيا؟</div>
+        <div class="features-grid">
+            <div class="feat">
+                <i class="fas fa-clock"></i>
+                <h3>24/7 متاح</h3>
+                <p>خدمة على مدار الساعة طوال أيام الأسبوع.</p>
+            </div>
+            <div class="feat">
+                <i class="fas fa-shield-alt"></i>
+                <h3>أمان تام</h3>
+                <p>سائقون مرخصون وتتبع مباشر للرحلة.</p>
+            </div>
+            <div class="feat">
+                <i class="fas fa-credit-card"></i>
+                <h3>دفع مرن</h3>
+                <p>نقداً أو عبر التطبيق بكل سهولة.</p>
             </div>
         </div>
     </div>
 </section>
 
+<!-- الفوتر مع معلومات الاتصال -->
 <footer id="contact">
     <div class="container">
-        <h3 style="color: var(--gold);">نهضة ليبيا - nhrdp.ly</h3>
-        <p style="margin-top: 10px;">أدوات الاتصال السريع:</p>
+        <h3 style="color:#ffd700; margin-bottom:20px; font-size:1.8rem;">نهضة ليبيا - nhrdp.ly</h3>
         
-        <div class="contact-btns">
-            <a href="https://wa.me/218917021437" class="btn-wa">
-                <i class="fab fa-whatsapp fa-lg"></i> واتساب: 0917021437
+        <div class="footer-contact">
+            <a href="https://wa.me/00218917021437" target="_blank">
+                <i class="fab fa-whatsapp"></i> 00218-91-7021437
             </a>
-            <a href="mailto:nosa6512@gmail.com" class="btn-mail">
-                <i class="fas fa-envelope fa-lg"></i> nosa6512@gmail.com
+            <a href="mailto:nosa6512@gmail.com">
+                <i class="far fa-envelope"></i> nosa6512@gmail.com
             </a>
         </div>
-
-        <div style="margin-top: 20px; font-size: 0.8rem; opacity: 0.7;">
-            <p>© 2026 جميع الحقوق محفوظة لشركة نهضة ليبيا</p>
+        
+        <p>© 2026 جميع الحقوق محفوظة. موقع تاكسي توصيل احترافي – مُحسَّن لمحركات البحث.</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
         </div>
     </div>
 </footer>
 
+<!-- بيانات منظمة لمحركات البحث -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TaxiService",
   "name": "نهضة ليبيا تاكسي",
   "url": "https://nhrdp.ly",
+  "description": "خدمة تاكسي توصيل فوري في ليبيا مع سائقين محترفين وحجز سهل.",
+  "areaServed": {
+    "@type": "Country",
+    "name": "ليبيا"
+  },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+218917021437",
+    "telephone": "+218-91-7021437",
     "contactType": "customer service",
     "email": "nosa6512@gmail.com"
   }
 }
 </script>
-
 </body>
 </html>
