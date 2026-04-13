@@ -2,7 +2,7 @@
   "name": "نهضة ليبيا تاكسي",
   "short_name": "نهضة ليبيا",
   "description": "تطبيق حجز سيارات الأجرة والتوصيل الفوري في ليبيا",
-  "start_url": "/nhrdply/",
+  "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#0b0c1e",
