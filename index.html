@@ -3,21 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    
+    <!-- PWA Meta -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="نهضة ليبيا">
+    <meta name="theme-color" content="#0b0c1e">
+    
     <title>نهضة ليبيا - nhrdp.ly | تاكسي توصيل فوري واحترافي في ليبيا</title>
     <meta name="description" content="تطبيق نهضة ليبيا لحجز سيارات الأجرة والتوصيل الفوري. نضمن لك الراحة والأمان مع سائقين محترفين. احجز تاكسيك الآن عبر nhrdp.ly">
     <meta name="keywords" content="تاكسي ليبيا, توصيل فوري, نهضة ليبيا, nhrdp, حجز تاكسي, خرائط جوجل, أسعار التاكسي">
     <meta name="author" content="نهضة ليبيا">
     <link rel="canonical" href="https://nhrdp.ly">
+    
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nhrdp.ly">
     <meta property="og:title" content="نهضة ليبيا | تاكسي توصيل فوري">
     <meta property="og:description" content="احجز تاكسيك الآن مع نهضة ليبيا. أسرع خدمة توصيل في ليبيا.">
     <meta property="og:image" content="https://nhrdp.ly/taxi-vibe.jpg">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <style>
+        /* --- جميع الأنماط السابقة كما هي دون تغيير --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Cairo', sans-serif; background-color: #fefefe; color: #1e1e2f; line-height: 1.5; overflow-x: hidden; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
@@ -83,7 +95,7 @@
         .social-icons a { color: #ffd700; font-size: 1.5rem; transition: 0.3s; }
         .social-icons a:hover { color: white; transform: scale(1.1); }
 
-        /* نافذة الأسعار المنبثقة */
+        /* Modal */
         .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); align-items: center; justify-content: center; }
         .modal-content { background: white; border-radius: 30px; max-width: 650px; width: 90%; max-height: 80vh; overflow-y: auto; padding: 25px 20px; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.3); border: 3px solid #ffd700; }
         .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #ffd700; }
@@ -139,13 +151,10 @@
             <h2><i class="fas fa-tag" style="color: #ffd700; margin-left: 10px;"></i> قائمة الأسعار</h2>
             <button class="close-btn" onclick="closeModal()">&times;</button>
         </div>
-        
         <!-- جدول VIP -->
         <table class="price-table vip-table">
             <caption>🚖 أسعار VIP</caption>
-            <thead>
-                <tr><th>الوجهة</th><th>السعر (دينار)</th></tr>
-            </thead>
+            <thead><tr><th>الوجهة</th><th>السعر (دينار)</th></tr></thead>
             <tbody>
                 <tr><td>داخل طرابلس</td><td>45</td></tr>
                 <tr><td>مصراتة</td><td>500</td></tr>
@@ -154,13 +163,10 @@
                 <tr><td>بنغازي</td><td>1300</td></tr>
             </tbody>
         </table>
-        
         <!-- جدول اقتصادي -->
         <table class="price-table">
             <caption>🚕 أسعار اقتصادي</caption>
-            <thead>
-                <tr><th>الوجهة</th><th>السعر (دينار)</th></tr>
-            </thead>
+            <thead><tr><th>الوجهة</th><th>السعر (دينار)</th></tr></thead>
             <tbody>
                 <tr><td>طرابلس (داخل المدينة)</td><td>20</td></tr>
                 <tr><td>طرابلس / مصراتة</td><td>320</td></tr>
@@ -169,15 +175,11 @@
                 <tr><td>طرابلس / بنغازي</td><td>900</td></tr>
             </tbody>
         </table>
-        
-        <div class="note">
-            <i class="fas fa-box"></i> توجد خدمة توصيل أمانات لجميع المناطق
-        </div>
+        <div class="note"><i class="fas fa-box"></i> توجد خدمة توصيل أمانات لجميع المناطق</div>
         <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #666;">الأسعار قابلة للتغيير في أوقات الذروة. للحجز يرجى التواصل.</p>
     </div>
 </div>
 
-<!-- القسم الرئيسي بصورة taxi-vibe.jpg -->
 <section id="home" class="hero">
     <div class="hero-overlay"></div>
     <div class="container hero-content">
@@ -187,26 +189,16 @@
     </div>
 </section>
 
-<!-- قسم الأسطول: بطاقتين فقط مع taxi-7.jpg و nhrdp1.jpg -->
 <section id="fleet" class="fleet-section">
     <div class="container">
         <div class="section-title">أسطولنا العصري</div>
         <div class="car-gallery">
-            <div class="car-card">
-                <img src="taxi-7.jpg" alt="تاكسي VIP - نهضة ليبيا" loading="lazy">
-                <h3>تاكسي VIP</h3>
-                <p>سيارات حديثة مكيفة مع سائقين محترفين – مثالية لرجال الأعمال.</p>
-            </div>
-            <div class="car-card">
-                <img src="nhrdp1.jpg" alt="تاكسي نهضة ليبيا - خدمة متميزة" loading="lazy">
-                <h3>تاكسي اقتصادي</h3>
-                <p>سيارات اقتصادية مريحة تناسب جميع الميزانيات مع نفس مستوى الخدمة الممتازة.</p>
-            </div>
+            <div class="car-card"><img src="taxi-7.jpg" alt="تاكسي VIP" loading="lazy"><h3>تاكسي VIP</h3><p>سيارات حديثة مكيفة مع سائقين محترفين – مثالية لرجال الأعمال.</p></div>
+            <div class="car-card"><img src="nhrdp1.jpg" alt="تاكسي اقتصادي" loading="lazy"><h3>تاكسي اقتصادي</h3><p>سيارات اقتصادية مريحة تناسب جميع الميزانيات مع نفس مستوى الخدمة الممتازة.</p></div>
         </div>
     </div>
 </section>
 
-<!-- نموذج الحجز والخريطة -->
 <section id="book" class="booking-section">
     <div class="container">
         <div class="section-title">احجز تاكسيك الآن – أدخل بياناتك</div>
@@ -236,7 +228,6 @@
     </div>
 </section>
 
-<!-- المميزات -->
 <section class="features">
     <div class="container">
         <div class="section-title" style="color:white;">لماذا نهضة ليبيا؟</div>
@@ -248,7 +239,6 @@
     </div>
 </section>
 
-<!-- الفوتر -->
 <footer id="contact">
     <div class="container">
         <h3 style="color:#ffd700; margin-bottom:20px; font-size:1.8rem;">نهضة ليبيا - nhrdp.ly</h3>
@@ -278,28 +268,15 @@
 </script>
 
 <script>
-    // Modal functionality
+    // Modal
     const modal = document.getElementById('priceModal');
-    const pricesLink = document.getElementById('pricesLink');
-    
-    pricesLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        modal.style.display = 'flex';
-    });
-    
-    function closeModal() {
-        modal.style.display = 'none';
-    }
-    
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = 'none';
-        }
-    }
+    document.getElementById('pricesLink').addEventListener('click', e => { e.preventDefault(); modal.style.display = 'flex'; });
+    function closeModal() { modal.style.display = 'none'; }
+    window.onclick = e => { if (e.target == modal) modal.style.display = 'none'; }
 
-    // Booking handler
-    function handleBooking(event) {
-        event.preventDefault();
+    // Booking
+    function handleBooking(e) {
+        e.preventDefault();
         const fullname = document.getElementById('fullname').value.trim();
         const phone = document.getElementById('phone').value.trim();
         const email = document.getElementById('email').value.trim();
@@ -307,18 +284,26 @@
         const destination = document.getElementById('destination').value.trim();
         const carType = document.getElementById('carType').value;
         if (!fullname || !phone || !pickup || !destination) { alert('الرجاء تعبئة جميع الحقول المطلوبة (*)'); return; }
-        let message = `🚖 *حجز تاكسي جديد - نهضة ليبيا* 🚖%0A%0A`;
-        message += `👤 *الاسم:* ${fullname}%0A📞 *الهاتف:* ${phone}%0A`;
-        if (email) message += `📧 *البريد:* ${email}%0A`;
-        message += `📍 *من:* ${pickup}%0A🎯 *إلى:* ${destination}%0A🚕 *نوع التاكسي:* ${carType}%0A%0A_تم الإرسال عبر nhrdp.ly_`;
-        window.open(`https://wa.me/218917021437?text=${message}`, '_blank');
+        let msg = `🚖 *حجز تاكسي جديد - نهضة ليبيا* 🚖%0A%0A`;
+        msg += `👤 *الاسم:* ${fullname}%0A📞 *الهاتف:* ${phone}%0A`;
+        if (email) msg += `📧 *البريد:* ${email}%0A`;
+        msg += `📍 *من:* ${pickup}%0A🎯 *إلى:* ${destination}%0A🚕 *نوع التاكسي:* ${carType}%0A%0A_تم الإرسال عبر nhrdp.ly_`;
+        window.open(`https://wa.me/218917021437?text=${msg}`, '_blank');
         alert('سيتم توجيهك إلى واتساب لإتمام الحجز. شكراً لاختيارك نهضة ليبيا!');
     }
-    
-    function copyEmail(event) {
-        event.preventDefault();
+    function copyEmail(e) {
+        e.preventDefault();
         const email = 'Vennreai.office@gmail.com';
         navigator.clipboard.writeText(email).then(() => alert('تم نسخ البريد: ' + email)).catch(() => prompt('انسخ البريد يدوياً:', email));
+    }
+
+    // PWA Service Worker Registration
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+                .then(reg => console.log('✅ Service Worker مسجل بنجاح'))
+                .catch(err => console.log('❌ فشل تسجيل Service Worker', err));
+        });
     }
 </script>
 </body>
