@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
     <style>
-        /* --- جميع الأنماط السابقة كما هي دون تغيير --- */
+        /* --- الأنماط السابقة كما هي (لم تتغير) --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Cairo', sans-serif; background-color: #fefefe; color: #1e1e2f; line-height: 1.5; overflow-x: hidden; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
@@ -110,6 +110,38 @@
         .vip-table th { background: #1a1e3a; color: #ffd700; }
         .note { background: #f8f9ff; padding: 12px; border-radius: 15px; text-align: center; font-weight: 600; margin-top: 10px; border: 1px dashed #ffd700; }
 
+        /* زر تثبيت التطبيق (PWA Install) */
+        .install-btn-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1500;
+        }
+        .install-btn {
+            background: #ffd700;
+            color: #0b0c1e;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            gap: 8px;
+            border: 2px solid #0b0c1e;
+            transition: 0.3s;
+        }
+        .install-btn:hover {
+            background: #0b0c1e;
+            color: #ffd700;
+            border-color: #ffd700;
+        }
+        .install-btn i {
+            font-size: 1.2rem;
+        }
+
         @media (max-width: 480px) {
             .header-flex { flex-direction: column; text-align: center; }
             nav { width: 100%; justify-content: center; }
@@ -121,6 +153,7 @@
             .footer-contact a { width: 100%; justify-content: center; }
             .modal-content { padding: 20px 15px; }
             .price-table th, .price-table td { padding: 8px; font-size: 0.85rem; }
+            .install-btn { padding: 10px 16px; font-size: 0.9rem; }
         }
         img { max-width: 100%; height: auto; }
     </style>
@@ -255,6 +288,13 @@
     </div>
 </footer>
 
+<!-- زر تثبيت التطبيق العائم -->
+<div class="install-btn-container">
+    <button id="installButton" class="install-btn">
+        <i class="fas fa-download"></i> تثبيت التطبيق
+    </button>
+</div>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -297,7 +337,31 @@
         navigator.clipboard.writeText(email).then(() => alert('تم نسخ البريد: ' + email)).catch(() => prompt('انسخ البريد يدوياً:', email));
     }
 
-    // PWA Service Worker Registration
+    // PWA Install Logic
+    let deferredPrompt;
+    const installButton = document.getElementById('installButton');
+
+    window.addEventListener('beforeinstallprompt', (e) => {
+        e.preventDefault();
+        deferredPrompt = e;
+        installButton.style.display = 'flex';
+    });
+
+    installButton.addEventListener('click', async () => {
+        if (!deferredPrompt) return;
+        deferredPrompt.prompt();
+        const { outcome } = await deferredPrompt.userChoice;
+        console.log(`User response: ${outcome}`);
+        deferredPrompt = null;
+        installButton.style.display = 'none';
+    });
+
+    window.addEventListener('appinstalled', () => {
+        installButton.style.display = 'none';
+        console.log('تم تثبيت التطبيق');
+    });
+
+    // Service Worker Registration
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('/sw.js')
