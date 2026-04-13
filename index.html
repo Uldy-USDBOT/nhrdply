@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>نهضة ليبيا - nhrdp.ly | تاكسي توصيل فوري واحترافي في ليبيا</title>
     <meta name="description" content="تطبيق نهضة ليبيا لحجز سيارات الأجرة والتوصيل الفوري. نضمن لك الراحة والأمان مع سائقين محترفين. احجز تاكسيك الآن عبر nhrdp.ly">
-    <meta name="keywords" content="تاكسي ليبيا, توصيل فوري, نهضة ليبيا, nhrdp, حجز تاكسي, خرائط جوجل">
+    <meta name="keywords" content="تاكسي ليبيا, توصيل فوري, نهضة ليبيا, nhrdp, حجز تاكسي, خرائط جوجل, أسعار التاكسي">
     <meta name="author" content="نهضة ليبيا">
     <link rel="canonical" href="https://nhrdp.ly">
     <meta property="og:type" content="website">
@@ -82,6 +82,22 @@
         .social-icons { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
         .social-icons a { color: #ffd700; font-size: 1.5rem; transition: 0.3s; }
         .social-icons a:hover { color: white; transform: scale(1.1); }
+
+        /* نافذة الأسعار المنبثقة */
+        .modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); align-items: center; justify-content: center; }
+        .modal-content { background: white; border-radius: 30px; max-width: 650px; width: 90%; max-height: 80vh; overflow-y: auto; padding: 25px 20px; position: relative; box-shadow: 0 25px 50px rgba(0,0,0,0.3); border: 3px solid #ffd700; }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #ffd700; }
+        .modal-header h2 { color: #0b0c1e; font-size: 1.8rem; }
+        .close-btn { font-size: 2rem; font-weight: bold; color: #0b0c1e; cursor: pointer; background: none; border: none; transition: 0.3s; }
+        .close-btn:hover { color: #ffd700; }
+        .price-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        .price-table caption { font-weight: 800; font-size: 1.4rem; margin-bottom: 10px; color: #1a1e3a; text-align: right; }
+        .price-table th { background: #ffd700; color: #0b0c1e; padding: 12px; font-weight: 800; text-align: center; }
+        .price-table td { padding: 12px; border-bottom: 1px solid #e0e0e0; text-align: center; }
+        .price-table tr:last-child td { border-bottom: none; }
+        .vip-table th { background: #1a1e3a; color: #ffd700; }
+        .note { background: #f8f9ff; padding: 12px; border-radius: 15px; text-align: center; font-weight: 600; margin-top: 10px; border: 1px dashed #ffd700; }
+
         @media (max-width: 480px) {
             .header-flex { flex-direction: column; text-align: center; }
             nav { width: 100%; justify-content: center; }
@@ -91,6 +107,8 @@
             .booking-form { padding: 20px 15px; }
             .contact-options { grid-template-columns: 1fr; }
             .footer-contact a { width: 100%; justify-content: center; }
+            .modal-content { padding: 20px 15px; }
+            .price-table th, .price-table td { padding: 8px; font-size: 0.85rem; }
         }
         img { max-width: 100%; height: auto; }
     </style>
@@ -108,10 +126,56 @@
             <a href="#home">الرئيسية</a>
             <a href="#fleet">أسطولنا</a>
             <a href="#book">احجز الآن</a>
+            <a href="#" id="pricesLink">الأسعار</a>
             <a href="#contact">اتصل</a>
         </nav>
     </div>
 </header>
+
+<!-- نافذة الأسعار المنبثقة -->
+<div id="priceModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2><i class="fas fa-tag" style="color: #ffd700; margin-left: 10px;"></i> قائمة الأسعار</h2>
+            <button class="close-btn" onclick="closeModal()">&times;</button>
+        </div>
+        
+        <!-- جدول VIP -->
+        <table class="price-table vip-table">
+            <caption>🚖 أسعار VIP</caption>
+            <thead>
+                <tr><th>الوجهة</th><th>السعر (دينار)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>داخل طرابلس</td><td>45</td></tr>
+                <tr><td>مصراتة</td><td>500</td></tr>
+                <tr><td>رأس جدير</td><td>350</td></tr>
+                <tr><td>نالوت</td><td>450</td></tr>
+                <tr><td>بنغازي</td><td>1300</td></tr>
+            </tbody>
+        </table>
+        
+        <!-- جدول اقتصادي -->
+        <table class="price-table">
+            <caption>🚕 أسعار اقتصادي</caption>
+            <thead>
+                <tr><th>الوجهة</th><th>السعر (دينار)</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>طرابلس (داخل المدينة)</td><td>20</td></tr>
+                <tr><td>طرابلس / مصراتة</td><td>320</td></tr>
+                <tr><td>طرابلس / رأس جدير</td><td>200</td></tr>
+                <tr><td>طرابلس / نالوت</td><td>300</td></tr>
+                <tr><td>طرابلس / بنغازي</td><td>900</td></tr>
+            </tbody>
+        </table>
+        
+        <div class="note">
+            <i class="fas fa-box"></i> توجد خدمة توصيل أمانات لجميع المناطق
+        </div>
+        <p style="text-align: center; margin-top: 15px; font-size: 0.9rem; color: #666;">الأسعار قابلة للتغيير في أوقات الذروة. للحجز يرجى التواصل.</p>
+    </div>
+</div>
 
 <!-- القسم الرئيسي بصورة taxi-vibe.jpg -->
 <section id="home" class="hero">
@@ -184,7 +248,7 @@
     </div>
 </section>
 
-<!-- الفوتر مع حذف عبارة "مُحسَّن لمحركات البحث" -->
+<!-- الفوتر -->
 <footer id="contact">
     <div class="container">
         <h3 style="color:#ffd700; margin-bottom:20px; font-size:1.8rem;">نهضة ليبيا - nhrdp.ly</h3>
@@ -214,6 +278,26 @@
 </script>
 
 <script>
+    // Modal functionality
+    const modal = document.getElementById('priceModal');
+    const pricesLink = document.getElementById('pricesLink');
+    
+    pricesLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.style.display = 'flex';
+    });
+    
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+    
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    // Booking handler
     function handleBooking(event) {
         event.preventDefault();
         const fullname = document.getElementById('fullname').value.trim();
@@ -230,6 +314,7 @@
         window.open(`https://wa.me/218917021437?text=${message}`, '_blank');
         alert('سيتم توجيهك إلى واتساب لإتمام الحجز. شكراً لاختيارك نهضة ليبيا!');
     }
+    
     function copyEmail(event) {
         event.preventDefault();
         const email = 'Vennreai.office@gmail.com';
