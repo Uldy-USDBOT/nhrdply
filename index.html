@@ -18,7 +18,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* نفس الأنماط السابقة بدون تغيير */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Cairo', sans-serif; background-color: #fefefe; color: #1e1e2f; line-height: 1.5; overflow-x: hidden; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 15px; }
@@ -124,7 +123,7 @@
     </div>
 </section>
 
-<!-- قسم الأسطول مع صورة taxi-7.jpg -->
+<!-- قسم الأسطول: بطاقتين فقط مع taxi-7.jpg و nhrdp1.jpg -->
 <section id="fleet" class="fleet-section">
     <div class="container">
         <div class="section-title">أسطولنا العصري</div>
@@ -135,20 +134,15 @@
                 <p>سيارات حديثة مكيفة مع سائقين محترفين – مثالية لرجال الأعمال.</p>
             </div>
             <div class="car-card">
-                <img src="https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&w=600" alt="تاكسي عائلي واسع" loading="lazy">
-                <h3>تاكسي عائلي</h3>
-                <p>مساحة واسعة للأمتعة والعائلات، راحة وأمان على الطرق الليبية.</p>
-            </div>
-            <div class="car-card">
-                <img src="https://images.pexels.com/photos/210143/pexels-photo-210143.jpeg?auto=compress&cs=tinysrgb&w=600" alt="تاكسي كهربائي صديق للبيئة" loading="lazy">
-                <h3>كهربائي ذكي</h3>
-                <p>صديق للبيئة بتقنية عالية، توصيل سريع داخل المدينة.</p>
+                <img src="nhrdp1.jpg" alt="تاكسي نهضة ليبيا - خدمة متميزة" loading="lazy">
+                <h3>تاكسي اقتصادي</h3>
+                <p>سيارات اقتصادية مريحة تناسب جميع الميزانيات مع نفس مستوى الخدمة الممتازة.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- باقي الأقسام دون تغيير (نموذج الحجز، الخريطة، المميزات، الفوتر) -->
+<!-- نموذج الحجز والخريطة -->
 <section id="book" class="booking-section">
     <div class="container">
         <div class="section-title">احجز تاكسيك الآن – أدخل بياناتك</div>
@@ -161,7 +155,7 @@
                     <div class="form-group"><label>البريد الإلكتروني (اختياري)</label><input type="email" id="email" placeholder="example@nhrdp.ly"></div>
                     <div class="form-group"><label>نقطة الانطلاق *</label><input type="text" id="pickup" placeholder="شارع أو معلم قريب" required></div>
                     <div class="form-group"><label>الوجهة *</label><input type="text" id="destination" placeholder="المطار، الفندق..." required></div>
-                    <div class="form-group"><label>نوع التاكسي</label><select id="carType"><option>VIP – فاخر</option><option>عائلي – 7 مقاعد</option><option>كهربائي – اقتصادي</option></select></div>
+                    <div class="form-group"><label>نوع التاكسي</label><select id="carType"><option>VIP – فاخر</option><option>اقتصادي</option></select></div>
                     <button type="submit" class="btn-submit"><i class="fab fa-whatsapp"></i> احجز عبر واتساب</button>
                     <div class="contact-options">
                         <a href="https://wa.me/218917021437" target="_blank" class="contact-btn whatsapp-btn"><i class="fab fa-whatsapp"></i> واتساب مباشر</a>
@@ -178,6 +172,7 @@
     </div>
 </section>
 
+<!-- المميزات -->
 <section class="features">
     <div class="container">
         <div class="section-title" style="color:white;">لماذا نهضة ليبيا؟</div>
@@ -189,6 +184,7 @@
     </div>
 </section>
 
+<!-- الفوتر مع حذف عبارة "مُحسَّن لمحركات البحث" -->
 <footer id="contact">
     <div class="container">
         <h3 style="color:#ffd700; margin-bottom:20px; font-size:1.8rem;">نهضة ليبيا - nhrdp.ly</h3>
@@ -196,7 +192,7 @@
             <a href="https://wa.me/218917021437" target="_blank"><i class="fab fa-whatsapp"></i> +218 91 702 1437</a>
             <a href="mailto:Vennreai.office@gmail.com"><i class="far fa-envelope"></i> Vennreai.office@gmail.com</a>
         </div>
-        <p>© 2026 جميع الحقوق محفوظة. موقع تاكسي توصيل احترافي – مُحسَّن لمحركات البحث.</p>
+        <p>© 2026 جميع الحقوق محفوظة. موقع تاكسي توصيل احترافي.</p>
         <div class="social-icons">
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
