@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* -----------------------------
+  /* =================================
      Sticky Navbar
-  ----------------------------- */
+  ================================= */
   const navbar = document.querySelector(".navbar");
   window.addEventListener("scroll", () => {
     navbar.classList.toggle("navbar-scrolled", window.scrollY > 20);
   });
 
-  /* -----------------------------
+  /* =================================
      Fade Animation
-  ----------------------------- */
+  ================================= */
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) entry.target.classList.add("show-element");
@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
       observer.observe(item);
     });
 
-  /* -----------------------------
+  /* =================================
      Smooth Navigation
-  ----------------------------- */
+  ================================= */
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", function (e) {
       const target = document.querySelector(this.getAttribute("href"));
@@ -35,14 +35,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* -----------------------------
-     Booking -> WhatsApp
-     رقم واتساب: +218917021437
-  ----------------------------- */
-  const bookingForm = document.querySelector(".booking-form");
+  /* =================================
+     الحجز عبر iframe مخفي (مجاني بالكامل)
+     رقم الواتساب: 218917021437
+  ================================= */
+  const bookingForm = document.getElementById("bookingForm");
+  const hiddenFrame = document.getElementById("hiddenWhatsappFrame");
+
   if (bookingForm) {
     bookingForm.addEventListener("submit", function (e) {
       e.preventDefault();
+
       const inputs = bookingForm.querySelectorAll("input");
       const name = inputs[0].value.trim();
       const phone = inputs[1].value.trim();
@@ -54,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // بناء رسالة واتساب منسقة
+      // رسالة واتساب منسقة
       const message = [
         "🚖 *حجز جديد*",
         "",
@@ -64,17 +67,28 @@ document.addEventListener("DOMContentLoaded", () => {
         "🏁 الوجهة: " + to,
         "",
         "تم الإرسال عبر نهضة ليبيا"
-      ].join("\n");
+      ].join("%0A");  // ترميز السطر الجديد للـ URL
 
       const whatsappNumber = "218917021437";
-      const url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
-      window.open(url, "_blank");
+      const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+      // فتح الرابط في iframe المخفي
+      hiddenFrame.src = waLink;
+
+      // إظهار رسالة نجاح وإعادة تعيين النموذج
+      alert("✅ تم إرسال حجزك بنجاح! سنتواصل معك قريباً.");
+      bookingForm.reset();
+
+      // إزالة الرابط من iframe بعد ثانية (حتى لا يظل محملاً)
+      setTimeout(() => {
+        hiddenFrame.src = "";
+      }, 1500);
     });
   }
 
-  /* -----------------------------
+  /* =================================
      Mouse Glow Effect
-  ----------------------------- */
+  ================================= */
   const glow = document.createElement("div");
   Object.assign(glow.style, {
     position: "fixed",
@@ -93,9 +107,9 @@ document.addEventListener("DOMContentLoaded", () => {
     glow.style.top = e.clientY - 150 + "px";
   });
 
-  /* -----------------------------
+  /* =================================
      Counter Animation
-  ----------------------------- */
+  ================================= */
   const counters = document.querySelectorAll(".stats strong");
   function animateCounter(el) {
     const text = el.textContent;
@@ -119,9 +133,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }, { threshold: 0.4 });
   counters.forEach((c) => statsObserver.observe(c));
 
-  /* -----------------------------
+  /* =================================
      Animation Styles
-  ----------------------------- */
+  ================================= */
   const style = document.createElement("style");
   style.textContent = `
     .hidden-element { opacity:0; transform:translateY(60px); transition: opacity .8s ease, transform .8s ease; }
