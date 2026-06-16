@@ -36,11 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =================================
-     الحجز عبر iframe مخفي (مجاني بالكامل)
-     رقم الواتساب: 218917021437
+     الحجز عبر نافذة صامتة (Popup)
+     رقم الواتساب: +218917021437
   ================================= */
   const bookingForm = document.getElementById("bookingForm");
-  const hiddenFrame = document.getElementById("hiddenWhatsappFrame");
 
   if (bookingForm) {
     bookingForm.addEventListener("submit", function (e) {
@@ -67,22 +66,24 @@ document.addEventListener("DOMContentLoaded", () => {
         "🏁 الوجهة: " + to,
         "",
         "تم الإرسال عبر نهضة ليبيا"
-      ].join("%0A");  // ترميز السطر الجديد للـ URL
+      ].join("%0A"); // سطر جديد في رابط URL
 
       const whatsappNumber = "218917021437";
       const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-      // فتح الرابط في iframe المخفي
-      hiddenFrame.src = waLink;
+      // فتح نافذة صغيرة مخفية
+      const popup = window.open(waLink, "_blank", "width=400,height=600,left=100,top=100");
 
-      // إظهار رسالة نجاح وإعادة تعيين النموذج
+      // إظهار رسالة نجاح
       alert("✅ تم إرسال حجزك بنجاح! سنتواصل معك قريباً.");
       bookingForm.reset();
 
-      // إزالة الرابط من iframe بعد ثانية (حتى لا يظل محملاً)
-      setTimeout(() => {
-        hiddenFrame.src = "";
-      }, 1500);
+      // محاولة إغلاق النافذة بعد 1.5 ثانية
+      if (popup) {
+        setTimeout(() => {
+          popup.close();
+        }, 1500);
+      }
     });
   }
 
