@@ -56,17 +56,13 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // رسالة واتساب منسقة
-      const message = [
-        "🚖 *حجز جديد*",
-        "",
-        "👤 الاسم: " + name,
-        "📞 الهاتف: " + phone,
-        "📍 الانطلاق: " + from,
-        "🏁 الوجهة: " + to,
-        "",
-        "تم الإرسال عبر نهضة ليبيا"
-      ].join("%0A"); // سطر جديد في رابط URL
+      // رسالة واتساب منسقة (بدون %0A يدوي)
+      const message = "🚖 *حجز جديد*\n\n" +
+                      "👤 الاسم: " + name + "\n" +
+                      "📞 الهاتف: " + phone + "\n" +
+                      "📍 الانطلاق: " + from + "\n" +
+                      "🏁 الوجهة: " + to + "\n\n" +
+                      "تم الإرسال عبر نهضة ليبيا";
 
       const whatsappNumber = "218917021437";
       const waLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
