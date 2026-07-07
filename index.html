@@ -1,108 +1,319 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>نهضة ليبيا | منصة نقل ذكية</title>
-  <meta name="description" content="نهضة ليبيا - منصة نقل حديثة تربط الركاب بسائقين محترفين عبر تجربة رقمية سريعة وآمنة." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NHRDP.ly | نطاق مميز للبيع</title>
+<meta name="description" content="NHRDP.ly — نطاق أنيق يجسّد مستقبل الهندسة المعمارية والتصميم الحضري. معروض للبيع من مالكه المباشر.">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --concrete:#f4f2ee;
+    --concrete-dark:#e7e3db;
+    --charcoal:#1c1c1c;
+    --charcoal-soft:#2e2e2e;
+    --line-gold:#a8895a;
+    --line-gold-light:#c9ab7d;
+    --ink-soft:#6b6560;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Almarai', sans-serif;
+    background:var(--concrete);
+    color:var(--charcoal);
+    min-height:100vh;
+  }
+  .font-serif{font-family:'Cormorant Garamond', serif;}
+
+  .blueprint-bg{
+    background-image:
+      linear-gradient(rgba(28,28,28,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(28,28,28,0.04) 1px, transparent 1px);
+    background-size:48px 48px;
+  }
+
+  .panel{
+    background:var(--white);
+    border:1px solid var(--concrete-dark);
+  }
+
+  .hairline{
+    height:1px;
+    background:linear-gradient(90deg, var(--line-gold), transparent);
+    width:80px;
+  }
+
+  .grid-frame{
+    border:1px solid var(--charcoal);
+    position:relative;
+  }
+  .grid-frame::before{
+    content:"";
+    position:absolute;
+    top:-6px; right:-6px;
+    width:12px; height:12px;
+    border-top:1px solid var(--line-gold);
+    border-right:1px solid var(--line-gold);
+  }
+  .grid-frame::after{
+    content:"";
+    position:absolute;
+    bottom:-6px; left:-6px;
+    width:12px; height:12px;
+    border-bottom:1px solid var(--line-gold);
+    border-left:1px solid var(--line-gold);
+  }
+
+  .rise{
+    opacity:0; transform:translateY(26px);
+    animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards;
+  }
+  @keyframes rise{to{opacity:1; transform:translateY(0);}}
+  .d1{animation-delay:.1s;} .d2{animation-delay:.22s;}
+  .d3{animation-delay:.34s;} .d4{animation-delay:.46s;}
+
+  .num-tag{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--line-gold);
+  }
+
+  .card-hover{
+    transition:all .35s cubic-bezier(.2,.8,.2,1);
+  }
+  .card-hover:hover{
+    transform:translateY(-5px);
+    box-shadow:0 25px 50px -18px rgba(28,28,28,0.15);
+    border-color:var(--line-gold);
+  }
+
+  input:focus, textarea:focus, select:focus{
+    outline:none;
+    border-color:var(--line-gold);
+    box-shadow:0 0 0 3px rgba(168,137,90,0.12);
+  }
+
+  ::selection{background:var(--line-gold-light); color:var(--charcoal);}
+
+  .arch-img{
+    filter:grayscale(15%) contrast(1.05);
+    transition:filter .4s ease, transform .5s ease;
+  }
+  .arch-img-wrap:hover .arch-img{
+    filter:grayscale(0%) contrast(1.1);
+    transform:scale(1.03);
+  }
+</style>
 </head>
 <body>
-  <div class="bg-blur bg-1"></div>
-  <div class="bg-blur bg-2"></div>
 
-  <header class="navbar">
-    <div class="logo">
-      <span class="logo-mark"></span>
+<!-- ============ Header ============ -->
+<header class="max-w-6xl mx-auto px-6 py-8 flex items-center justify-between">
+  <div class="font-serif text-2xl font-semibold tracking-wide">
+    NHRDP<span style="color:var(--line-gold)">.</span>ly
+  </div>
+  <nav class="hidden md:flex items-center gap-10 text-sm font-bold text-[var(--ink-soft)]">
+    <a href="#vision" class="hover:text-[var(--charcoal)] transition">الرؤية</a>
+    <a href="#details" class="hover:text-[var(--charcoal)] transition">التفاصيل</a>
+    <a href="#contact" class="hover:text-[var(--charcoal)] transition">تواصل</a>
+  </nav>
+  <a href="#contact" class="text-sm font-bold px-6 py-2.5 border" style="border-color:var(--charcoal)">
+    راسلنا
+  </a>
+</header>
+
+<!-- ============ Hero ============ -->
+<section class="blueprint-bg">
+  <div class="max-w-6xl mx-auto px-6 py-20 md:py-28">
+    <div class="grid md:grid-cols-[1.1fr_0.9fr] gap-12 items-center">
+
+      <div class="rise">
+        <div class="hairline mb-6"></div>
+        <p class="text-xs font-extrabold uppercase tracking-[0.2em] text-[var(--line-gold)] mb-5">نطاق معروض للبيع</p>
+        <h1 class="font-serif text-6xl md:text-7xl font-semibold leading-[1.05] mb-6">
+          NHRDP<span style="color:var(--line-gold)">.</span>ly
+        </h1>
+        <p class="text-base md:text-lg text-[var(--ink-soft)] leading-relaxed max-w-lg mb-3">
+          مستقبل الهندسة المعمارية والتصميم الحضري.
+        </p>
+        <p class="text-sm text-[var(--ink-soft)] leading-relaxed max-w-lg mb-9">
+          اسم مختصر ونادر، مثالي لمكاتب الهندسة المعمارية، استوديوهات التصميم الحضري،
+          أو أي منصة تعيد تعريف المساحات والمباني للمستقبل.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#contact" class="bg-[var(--charcoal)] text-white font-bold px-8 py-4 text-sm hover:bg-[var(--charcoal-soft)] transition">
+            تواصل للاستفسار
+          </a>
+        </div>
+      </div>
+
+      <div class="rise d1">
+        <div class="grid-frame arch-img-wrap overflow-hidden">
+          <img class="arch-img w-full h-full object-cover" style="aspect-ratio:4/5"
+            src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=700&h=875&fit=crop" alt="Modern Architecture Building">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ Stats ============ -->
+<section class="max-w-6xl mx-auto px-6 py-14">
+  <div class="grid grid-cols-3 gap-4 md:gap-6">
+    <div class="panel card-hover p-7 text-center rise d1">
+      <p class="font-serif text-4xl font-semibold mb-1">5</p>
+      <p class="text-xs text-[var(--ink-soft)] font-bold uppercase tracking-wide">أحرف</p>
+    </div>
+    <div class="panel card-hover p-7 text-center rise d2">
+      <p class="font-serif text-4xl font-semibold mb-1">.ly</p>
+      <p class="text-xs text-[var(--ink-soft)] font-bold uppercase tracking-wide">امتداد نادر</p>
+    </div>
+    <div class="panel card-hover p-7 text-center rise d3">
+      <p class="font-serif text-4xl font-semibold mb-1">1</p>
+      <p class="text-xs text-[var(--ink-soft)] font-bold uppercase tracking-wide">مالك مباشر</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Vision / Why ============ -->
+<section id="vision" class="max-w-6xl mx-auto px-6 py-16">
+  <div class="mb-12 rise">
+    <div class="hairline mb-5"></div>
+    <h2 class="font-serif text-4xl md:text-5xl font-semibold mb-3">لماذا NHRDP.ly؟</h2>
+    <p class="text-[var(--ink-soft)] max-w-xl">اسم يحمل هوية بصرية جاهزة لعالم الهندسة المعمارية والتصميم الحضري المستقبلي.</p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-6">
+    <div class="panel card-hover p-9 rise d1">
+      <p class="num-tag text-4xl mb-4">01</p>
+      <h3 class="font-bold text-lg mb-3">هوية معمارية واضحة</h3>
+      <p class="text-sm text-[var(--ink-soft)] leading-relaxed">اسم مختصر يرتبط مباشرة بعالم العمارة والتصميم، مثالي لمكاتب هندسية أو استوديوهات تصميم.</p>
+    </div>
+    <div class="panel card-hover p-9 rise d2">
+      <p class="num-tag text-4xl mb-4">02</p>
+      <h3 class="font-bold text-lg mb-3">توجه مستقبلي</h3>
+      <p class="text-sm text-[var(--ink-soft)] leading-relaxed">يناسب منصات التصميم الحضري الذكي، العمارة المستدامة، والمدن المستقبلية.</p>
+    </div>
+    <div class="panel card-hover p-9 rise d3">
+      <p class="num-tag text-4xl mb-4">03</p>
+      <h3 class="font-bold text-lg mb-3">نادر وقصير</h3>
+      <p class="text-sm text-[var(--ink-soft)] leading-relaxed">أسماء من 5 أحرف أصبحت شبه مستحيلة الإيجاد، مما يمنحه قيمة استثمارية عالية.</p>
+    </div>
+    <div class="panel card-hover p-9 rise d4">
+      <p class="num-tag text-4xl mb-4">04</p>
+      <h3 class="font-bold text-lg mb-3">مرونة الاستخدام</h3>
+      <p class="text-sm text-[var(--ink-soft)] leading-relaxed">يصلح لمكتب هندسي، منصة عقارية، معرض تصميم، أو حتى مجلة معمارية متخصصة.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Domain Details ============ -->
+<section id="details" class="max-w-6xl mx-auto px-6 py-16">
+  <div class="panel p-10 md:p-14 rise">
+    <h3 class="font-serif text-3xl font-semibold mb-10">بيانات النطاق</h3>
+    <div class="grid md:grid-cols-4 gap-8">
       <div>
-        <h2>نهضة ليبيا</h2>
-        <small>NHRDP.LY</small>
+        <p class="text-xs text-[var(--ink-soft)] uppercase font-bold tracking-wide mb-2">النطاق</p>
+        <p class="text-xl font-bold">NHRDP.ly</p>
+      </div>
+      <div>
+        <p class="text-xs text-[var(--ink-soft)] uppercase font-bold tracking-wide mb-2">البائع</p>
+        <p class="text-xl font-bold">مالك فردي</p>
+      </div>
+      <div>
+        <p class="text-xs text-[var(--ink-soft)] uppercase font-bold tracking-wide mb-2">طريقة البيع</p>
+        <p class="text-xl font-bold">تفاوض مباشر</p>
+      </div>
+      <div>
+        <p class="text-xs text-[var(--ink-soft)] uppercase font-bold tracking-wide mb-2">الحالة</p>
+        <p class="text-xl font-bold" style="color:var(--line-gold)">متاح الآن</p>
       </div>
     </div>
-    <nav>
-      <a href="#hero">الرئيسية</a>
-      <a href="#services">الخدمات</a>
-      <a href="#fleet">الأسطول</a>
-      <a href="#pricing">الأسعار</a>
-      <a href="#booking">الحجز</a>
-    </nav>
-    <a class="primary-btn" href="#booking">احجز الآن</a>
-  </header>
+  </div>
+</section>
 
-  <section id="hero" class="hero">
-    <div class="hero-content">
-      <span class="badge">تجربة نقل رقمية جديدة</span>
-      <h1>مستقبل التنقل في ليبيا</h1>
-      <p>منصة مصممة بمعايير عالمية تجمع بين السرعة، الأمان، والراحة لتمنحك أفضل تجربة حجز داخل المدن وبينها.</p>
-      <div class="hero-buttons">
-        <a href="#booking" class="primary-btn">ابدأ الحجز</a>
-        <a href="#services" class="glass-btn">اكتشف الخدمات</a>
-      </div>
-      <div class="stats">
-        <div><strong>24/7</strong><span>دعم مستمر</span></div>
-        <div><strong>100%</strong><span>سائقون موثقون</span></div>
-        <div><strong>VIP</strong><span>خدمة فاخرة</span></div>
-        <div><strong>+50K</strong><span>رحلة ناجحة</span></div>
-      </div>
+<!-- ============ Process ============ -->
+<section class="max-w-6xl mx-auto px-6 py-16">
+  <div class="mb-12 rise">
+    <div class="hairline mb-5"></div>
+    <h2 class="font-serif text-4xl md:text-5xl font-semibold">آلية الشراء</h2>
+  </div>
+  <div class="grid md:grid-cols-3 gap-6">
+    <div class="panel card-hover p-9 rise d1">
+      <p class="num-tag text-4xl mb-4">01</p>
+      <h4 class="font-bold mb-2">أرسل استفسارك</h4>
+      <p class="text-sm text-[var(--ink-soft)]">عبّئ النموذج أدناه، وستصل رسالتك مباشرة لصندوق المالك.</p>
     </div>
-    <div class="hero-image">
-      <img src="assets/hero-car.png" alt="Luxury Car" />
+    <div class="panel card-hover p-9 rise d2">
+      <p class="num-tag text-4xl mb-4">02</p>
+      <h4 class="font-bold mb-2">محادثة مباشرة</h4>
+      <p class="text-sm text-[var(--ink-soft)]">يرد المالك شخصيًا لمناقشة السعر والتفاصيل بشفافية كاملة.</p>
     </div>
-  </section>
-
-  <section id="services" class="section">
-    <div class="section-title"><span>خدماتنا</span><h2>حلول نقل متطورة</h2></div>
-    <div class="cards">
-      <article class="card"><img src="assets/city.jpg" alt=""><h3>داخل المدن</h3><p>رحلات سريعة وموثوقة مع تجربة رقمية سهلة.</p></article>
-      <article class="card"><img src="assets/intercity.jpg" alt=""><h3>بين المدن</h3><p>تنقلات طويلة بسيارات حديثة وسائقين محترفين.</p></article>
-      <article class="card"><img src="assets/vip.jpg" alt=""><h3>VIP</h3><p>سيارات تنفيذية ومظهر احترافي للمناسبات.</p></article>
+    <div class="panel card-hover p-9 rise d3">
+      <p class="num-tag text-4xl mb-4">03</p>
+      <h4 class="font-bold mb-2">نقل آمن</h4>
+      <p class="text-sm text-[var(--ink-soft)]">يتم نقل ملكية النطاق عبر مسجّل رسمي موثوق.</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="fleet" class="section">
-    <div class="section-title"><span>أسطولنا</span><h2>سيارات حديثة بمعايير عالمية</h2></div>
-    <div class="fleet-grid">
-      <div class="fleet-box">سيدان فاخرة</div>
-      <div class="fleet-box">SUV عائلية</div>
-      <div class="fleet-box">Executive</div>
-      <div class="fleet-box">Airport</div>
+<!-- ============ Contact Form ============ -->
+<section id="contact" class="max-w-3xl mx-auto px-6 py-16">
+  <div class="mb-10 rise">
+    <div class="hairline mb-5"></div>
+    <h2 class="font-serif text-4xl md:text-5xl font-semibold mb-3">تواصل بخصوص NHRDP.ly</h2>
+    <p class="text-[var(--ink-soft)]">أرسل رسالتك، وستصل مباشرة إلى صندوق المالك.</p>
+  </div>
+
+  <form action="https://formsubmit.co/tech.co.ly@gmail.com" method="POST" class="panel p-8 md:p-12 space-y-5 rise d1">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_subject" value="استفسار حول نطاق NHRDP.ly">
+    <input type="hidden" name="_template" value="table">
+
+    <div class="grid md:grid-cols-2 gap-5">
+      <input type="text" name="الاسم الكامل" placeholder="الاسم الكامل" required
+        class="border border-[var(--concrete-dark)] px-5 py-4 text-sm font-semibold placeholder-[var(--ink-soft)] bg-[var(--concrete)]">
+      <input type="email" name="البريد الإلكتروني" placeholder="البريد الإلكتروني" required
+        class="border border-[var(--concrete-dark)] px-5 py-4 text-sm font-semibold placeholder-[var(--ink-soft)] bg-[var(--concrete)]">
     </div>
-  </section>
 
-  <section id="pricing" class="section">
-    <div class="section-title"><span>الأسعار</span><h2>خطط بسيطة وواضحة</h2></div>
-    <div class="pricing-grid">
-      <div class="price-card"><h3>اقتصادي</h3><h1>20 د.ل</h1><p>داخل المدينة</p><button>احجز</button></div>
-      <div class="price-card featured"><h3>المميزة</h3><h1>35 د.ل</h1><p>أفضل تجربة</p><button>احجز</button></div>
-      <div class="price-card"><h3>VIP</h3><h1>120 د.ل</h1><p>سيارة فاخرة</p><button>احجز</button></div>
-    </div>
-  </section>
+    <select name="نوع الاهتمام" class="w-full border border-[var(--concrete-dark)] px-5 py-4 text-sm font-semibold bg-[var(--concrete)]">
+      <option>اختر نوع اهتمامك</option>
+      <option>شراء مباشر</option>
+      <option>استفسار عن السعر</option>
+      <option>سؤال عام</option>
+    </select>
 
-  <section id="booking" class="section">
-    <div class="section-title"><span>الحجز</span><h2>ابدأ رحلتك</h2></div>
-    <form class="booking-form" id="bookingForm">
-      <input type="text" placeholder="الاسم الكامل" required />
-      <input type="tel" placeholder="رقم الهاتف" required />
-      <input type="text" placeholder="نقطة الانطلاق" required />
-      <input type="text" placeholder="الوجهة" required />
-      <button type="submit">تأكيد الحجز</button>
-    </form>
-  </section>
+    <textarea name="الرسالة" placeholder="اكتب رسالتك أو عرضك هنا..." rows="5" required
+      class="w-full border border-[var(--concrete-dark)] px-5 py-4 text-sm font-semibold placeholder-[var(--ink-soft)] bg-[var(--concrete)] resize-none"></textarea>
 
-  <footer>
-    <h3>نهضة ليبيا</h3>
-    <p>منصة نقل حديثة تهدف إلى تقديم تجربة رقمية متقدمة داخل ليبيا.</p>
-    <div class="footer-links">
-      <a href="#">الخصوصية</a>
-      <a href="#">الشروط</a>
-      <a href="#">تواصل معنا</a>
-    </div>
-    <small>© 2026 جميع الحقوق محفوظة.</small>
-  </footer>
+    <button type="submit" class="w-full bg-[var(--charcoal)] hover:bg-[var(--charcoal-soft)] text-white font-bold py-4 text-sm transition">
+      إرسال الرسالة
+    </button>
 
-  <script src="script.js"></script>
+    <p class="text-xs text-center text-[var(--ink-soft)]">
+      هذه الرسالة تصل مباشرة إلى صندوق البريد الخاص بمالك النطاق. لا وسطاء، لا سماسرة.
+    </p>
+  </form>
+</section>
+
+<!-- ============ Footer ============ -->
+<footer class="max-w-6xl mx-auto px-6 py-10 text-center border-t" style="border-color:var(--concrete-dark)">
+  <div class="font-serif text-xl font-semibold mb-2">
+    NHRDP<span style="color:var(--line-gold)">.</span>ly
+  </div>
+  <p class="text-xs text-[var(--ink-soft)]">
+    نطاق معروض للبيع من مالكه الفردي المباشر © 2026
+  </p>
+</footer>
+
 </body>
 </html>
