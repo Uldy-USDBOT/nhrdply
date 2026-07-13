@@ -304,7 +304,18 @@
     </p>
   </form>
 </section>
-
+<form id="ai-search">
+  <input type="text" id="q" placeholder="اسأل أي شيء في الموقع..." />
+</form>
+<script>
+const WORKER_URL = "https://بحثك.workers.dev";
+document.getElementById('ai-search').onsubmit = async e => {
+  e.preventDefault();
+  const res = await fetch(WORKER_URL, { method: 'POST', body: JSON.stringify({ query: q.value }) });
+  const { results } = await res.json();
+  resultsEl.innerHTML = results.map(r => `<a href="${r.url}"><b>${r.title}</b><p>${r.snippet}</p></a>`).join('');
+}
+</script>
 <!-- ============ Footer ============ -->
 <footer class="max-w-6xl mx-auto px-6 py-10 text-center border-t" style="border-color:var(--concrete-dark)">
   <div class="font-serif text-xl font-semibold mb-2">
